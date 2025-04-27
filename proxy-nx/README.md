@@ -1,1 +1,1 @@
-# NX reverse proxy server(HTTP/HTTPS)
+# NX reverse proxy server(HTTPS)
