@@ -1,0 +1,19 @@
+services:
+  nginx:
+    # nginx 최신 버전 이미지를 사용
+    image: nginx
+    # 컨테이너 이름은 kurly-rproxy
+    container_name: kurly-rproxy
+    # 항상 재시작
+    restart: always
+    # 컨테이너 /etc/hosts 파일에 구문 추가
+    # host.docker.internal:host-gateway - 로컬 호스트와 통신하기 위한 설정
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    ports:
+      - 80:80
+      - 443:443
+    # A:B - 호스트의 A를 컨테이너의 B에 복사
+    volumes:
+      - ./certs:/etc/nginx/certs
+      - ./conf.d:/etc/nginx/conf.d

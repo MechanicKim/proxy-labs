@@ -1,0 +1,26 @@
+{
+  "name": "proxy-nx",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cert": "./certgen.sh",
+    "dev": "node dev-server.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "next": "^15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.2",
+    "@types/react": "19.1.2",
+    "typescript": "5.8.3"
+  }
+}
