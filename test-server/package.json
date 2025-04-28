@@ -4,6 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
+    "test1": "PORT=3000 NAME=local.dev.kurly.com node dev-server.js",
+    "test2": "PORT=3001 NAME=now.local.dev.kurly.com node dev-server.js",
+    "test3": "PORT=3002 NAME=event.local.dev.kurly.com node dev-server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

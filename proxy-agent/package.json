@@ -1,0 +1,19 @@
+{
+  "name": "proxy-agent",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cert": "./certgen.sh",
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "http-proxy": "^1.18.1"
+  }
+}
