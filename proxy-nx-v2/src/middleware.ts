@@ -16,6 +16,6 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const targetUrl = new URL(pathname, `https://www.kurly.com`);
+  const targetUrl = new URL(pathname, `http://localhost:3000`);
   return NextResponse.rewrite(targetUrl);
 }

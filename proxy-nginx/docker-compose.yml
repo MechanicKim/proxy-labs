@@ -2,8 +2,8 @@ services:
   nginx:
     # nginx 최신 버전 이미지를 사용
     image: nginx
-    # 컨테이너 이름은 kurly-rproxy
-    container_name: kurly-rproxy
+    # 컨테이너 이름은 local-proxy
+    container_name: local-proxy
     # 항상 재시작
     restart: always
     # 컨테이너 /etc/hosts 파일에 구문 추가
