@@ -54,7 +54,6 @@ function onProxy(req, res) {
     const targetUrl = `http://localhost:${targetPort}`;
     proxy.web(req, res, { target: targetUrl });
   } else {
-    // 등록되지 않은 호스트 이름이면 404 또는 502 응답을 보냅니다.
     const errorMessage = `등록되지 않은 호스트 "${hostname}"입니다.`;
     console.warn(errorMessage);
     res.writeHead(404, {

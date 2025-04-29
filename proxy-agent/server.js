@@ -22,11 +22,11 @@ const httpsServer = https.createServer(
 );
 httpsServer.on("upgrade", onProxyWs);
 httpsServer.listen(HTTPS_PORT, () => {
-  console.log(`HTTPS 프록시 서버가 ${HTTPS_PORT}번 포트에서 실행 중입니다.`);
+  console.log(`HTTPS 프록시 서버(${HTTPS_PORT}) 실행 중입니다.`);
 });
 
 const HTTP_PORT = 80;
 const httpServer = http.createServer(app);
 httpServer.listen(HTTP_PORT, () => {
-  console.log(`HTTP 프록시 서버가 ${HTTP_PORT}번 포트에서 실행 중입니다.`);
+  console.log(`HTTP 프록시 서버(${HTTP_PORT}) 실행 중입니다.`);
 });
