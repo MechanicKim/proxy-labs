@@ -8,7 +8,6 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const serverName = process.env.NAME;
-process.title = serverName;
 
 app.prepare().then(() => {
   createServer((req, res) => {
@@ -32,5 +31,6 @@ fetch("http://localhost/api/app", {
 .then((response) => response.json())
 .then(console.log)
 .catch((error) => {
-  console.error("프록시 에이전트 서버가 실행 중인지 확인해 주세요.", error);
+  console.error("프록시 에이전트 서버가 실행 중인지 확인해 주세요.");
+  console.error(error);
 });
