@@ -1,0 +1,28 @@
+{
+  "name": "local-proxy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cert": "./tools/certgen.sh",
+    "dev": "npm run cert && node server.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "create-exec-file": "node ./tools/create-exec-file.js",
+    "update-hosts": "./tools/hostsup.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "next": "^15.2.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.14.0",
+    "@types/react": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}
