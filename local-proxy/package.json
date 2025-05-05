@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "create-exec-file": "node ./tools/create-exec-file.js",
-    "update-hosts": "./tools/hostsup.sh"
+    "hostsup": "./tools/hostsup.sh"
   },
   "keywords": [],
   "author": "",

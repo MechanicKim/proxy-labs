@@ -12,7 +12,7 @@ export async function middleware(request: NextRequest) {
   const host = headers.get("Host");
   const target = hostToTarget[host];
   if (target) {
-    const { protocol, host, port } = target;
+    const { protocol, port } = target;
     const url = new URL(nextUrl);
     url.protocol = protocol;
     url.host = host;

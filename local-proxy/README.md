@@ -8,6 +8,7 @@
 - tools/certgen.sh 파일에 사용할 호스트 추가
 - src/components/Hosts/hostToTarget.ts 파일 확인
   - 사용할 호스트를 기준으로 파일을 수정
+  - src/components/Hosts/types.ts 파일에서 타입 확인, 필요한 경우 수정
 
 ### Start
 ```

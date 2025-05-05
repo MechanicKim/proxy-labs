@@ -6,10 +6,10 @@ import style from "./style.module.css";
 import { Target } from "./type";
 
 export default function Hosts() {
-  const hostList = Object.keys(hostToTarget).map((key) => {
-    const { protocol, host, port, desc }: Target = hostToTarget[key];
+  const hostList = Object.keys(hostToTarget).map((host) => {
+    const { protocol, port, desc }: Target = hostToTarget[host];
     return {
-      host: key,
+      host,
       target: `${protocol}://${host}:${port}`,
       port,
       desc,
