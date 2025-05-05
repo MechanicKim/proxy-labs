@@ -4,9 +4,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "test1": "PORT=3000 NAME=local.test1.com node dev-server.js",
-    "test2": "PORT=3001 NAME=local.test2.com node dev-server.js",
-    "test3": "PORT=3002 NAME=local.test3.com node dev-server.js",
+    "test1": "PORT=3000 NAME=local.test1.com node server.js",
+    "test2": "PORT=3001 NAME=local.test2.com node server.js",
+    "test3": "PORT=3002 NAME=local.test3.com node server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

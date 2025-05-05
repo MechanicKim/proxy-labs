@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "cert": "./certgen.sh",
-    "dev": "node dev-server.js",
+    "dev": "node server.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
