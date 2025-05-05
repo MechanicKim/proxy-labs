@@ -7,7 +7,7 @@ const appRegistry = {};
 proxy.on("error", (err, req, res) => {
   console.error("Proxy Error:", err);
   res.writeHead(500, {
-    "Content-Type": "text/plain",
+    "Content-Type": "text/plain; charset=utf-8",
   });
   res.end("프록시 서버에 문제가 발생했습니다.");
 });
@@ -57,7 +57,7 @@ function onProxy(req, res) {
     const errorMessage = `등록되지 않은 호스트 "${hostname}"입니다.`;
     console.warn(errorMessage);
     res.writeHead(404, {
-      "Content-Type": "text/plain",
+      "Content-Type": "text/plain; charset=utf-8",
     });
     res.end(errorMessage);
   }
