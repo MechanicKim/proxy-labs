@@ -4,13 +4,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
 
-const app = express();
+const httpApp = express();
+const httpsApp = express();
 const { onAppRegister, onAppsRegistered, onProxy, onProxyWs } = require("./proxy");
 
-app.use(bodyParser.json()); // JSON 본문 파싱 미들웨어
-app.post("/api/app", onAppRegister); // 앱 서버의 로컬 호스트 이름, 포트 등록 API 엔드포인트
-app.get("/api/apps", onAppsRegistered); // 등록된 모든 앱의 로컬 호스트 이름, 포트 목록을 보는 엔드포인트
-app.use(onProxy); // 프록시 로직: 들어오는 모든 요청을 처리
+httpApp.use(bodyParser.json()); // JSON 본문 파싱 미들웨어
+httpApp.post("/api/app", onAppRegister); // 앱 서버의 로컬 호스트 이름, 포트 등록 API 엔드포인트
+httpApp.get("/api/apps", onAppsRegistered); // 등록된 모든 앱의 로컬 호스트 이름, 포트 목록을 보는 엔드포인트
+httpApp.use(onProxy); // 프록시 로직: 들어오는 모든 요청을 처리
+
+httpsApp.use(bodyParser.json()); // JSON 본문 파싱 미들웨어
+httpsApp.use(onProxy); // 프록시 로직: 들어오는 모든 요청을 처리
 
 const HTTPS_PORT = 443;
 const httpsServer = https.createServer(
@@ -18,7 +22,7 @@ const httpsServer = https.createServer(
     key: fs.readFileSync("./certs/key.pem"),
     cert: fs.readFileSync("./certs/cert.pem"),
   },
-  app
+  httpsApp
 );
 httpsServer.on("upgrade", onProxyWs);
 httpsServer.listen(HTTPS_PORT, () => {
@@ -26,7 +30,7 @@ httpsServer.listen(HTTPS_PORT, () => {
 });
 
 const HTTP_PORT = 80;
-const httpServer = http.createServer(app);
+const httpServer = http.createServer(httpApp);
 httpServer.listen(HTTP_PORT, () => {
   console.log(`HTTP 프록시 서버(${HTTP_PORT}) 실행 중입니다.`);
 });
