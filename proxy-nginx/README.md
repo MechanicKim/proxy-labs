@@ -12,8 +12,7 @@ Nginx 도커 이미지를 통한 프록시
   - 다른 포트를 사용할 경우 수정
 
 ### Start
-다음 명령을 차례로 실행하고 도커 데스크탑을 실행하여 확인
+다음 명령을 실행하고 도커 데스크탑을 실행하여 확인
 ```
-./certgen.sh
-docker compose up
+./certgen.sh && docker compose up
 ```
